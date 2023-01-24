@@ -6,7 +6,7 @@
     <packaging>war</packaging>
     <version>v2</version>
     <name>Visualpathit VProfile Webapp</name>
-    <url>http://maven.apache.org</url>
+    <url>https://digify24-271474952326.d.codeartifact.ap-south-1.amazonaws.com/maven/maven-central-store/</url>
     <properties>
     <timestamp>${maven.build.timestamp}</timestamp>
         <maven.build.timestamp.format>yyyy-MM-dd_HHmm</maven.build.timestamp.format>
