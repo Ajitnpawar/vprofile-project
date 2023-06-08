@@ -17,7 +17,7 @@ environment{
 
         CENTRAL_REPO = 'vprof-depend-central'
 
-        NEXUSIP = '172.31.11.174'
+        NEXUSIP = '172.31.15.28'
 
         NEXUSPORT = '8081'
 
