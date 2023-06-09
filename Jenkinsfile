@@ -43,13 +43,13 @@ environment{
         stage('Test') {
             steps {
                 // Step 1: Run mvn test
-                sh 'mvn test'
+                sh 'mvn -s settings.xml test'
             }
         }
         stage('Static Analysis') {
             steps {
                 // Step 2: Perform Checkstyle analysis
-                sh 'mvn checkstyle:checkstyle'
+                sh 'mvn -s settings.xml checkstyle:checkstyle'
                 
             }
         }
