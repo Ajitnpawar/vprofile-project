@@ -25,7 +25,7 @@ environment{
 
         NEXUS_LOGIN = 'c022fcbd-7fbc-4e34-82e1-b70d360ebfa1'
         SONARSERVER ='sonarserver'
-        SONARSCANNER='sonar'
+        SONARSCANNER='sonarscanner'
        
 }
 
