@@ -24,7 +24,8 @@ environment{
         NEXUS_GRP_REPO = 'vprof-grp'
 
         NEXUS_LOGIN = 'c022fcbd-7fbc-4e34-82e1-b70d360ebfa1'
-
+        SONARSERVER ='sonarserver'
+        SONARSCANNER='sonar'
        
 }
 
@@ -53,6 +54,17 @@ environment{
                 
             }
         }
+        stage('SonarQube Analysis') {
+            steps {
+                // Step: Checkout source code from version control
+                checkout scm
 
+                // Step: Set up environment variables for SonarQube
+                withSonarQubeEnv(SONARSERVER) {
+                    // Step: Run SonarQube scanner
+                    sh "${SONARSCANNER} sonar:sonar"
+                }
+            }
+        }
     }
 }
