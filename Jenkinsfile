@@ -33,6 +33,12 @@ environment{
             steps{
                  sh 'mvn -s settings.xml -DskipTests install'
             }
+            post {
+        success {
+            echo "Now archiving"
+            archiveArtifacts artifacts: '**/*.war'
+        }
+    }
         }
     }
 }
