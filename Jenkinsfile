@@ -57,10 +57,10 @@ environment{
         stage('SonarQube Analysis') {
             steps {
                 // Step: Checkout source code from version control
-                checkout scm
+                
 
                 // Step: Set up environment variables for SonarQube
-                withSonarQubeEnv(SONARSERVER) {
+                withSonarQubeEnv"${SONARSERVER}" {
                     // Step: Run SonarQube scanner
                     sh "${SONARSCANNER} sonar:sonar"
                 }
