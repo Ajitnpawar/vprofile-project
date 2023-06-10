@@ -22,7 +22,6 @@ environment{
         NEXUSPORT = '8081'
 
         NEXUS_GRP_REPO = 'vprof-grp'
-
         NEXUS_LOGIN = 'nexuslogin1'
         SONARSERVER ='sonarserver'
         SONARSCANNER='sonarscanner'
@@ -98,7 +97,7 @@ environment{
                 groupId: 'QA',
                 version: '$(env.BUILD_ID)-$(env.BUILD_TIMESTAMP)',
                 repository: '$(RELEASE_REPO)',
-                credentialsId: "$(NEXUS_LOGIN)",
+                credentialsId: '$(NEXUS_LOGIN)',
                 artifacts: [
                     // List of artifacts to upload
                     [
