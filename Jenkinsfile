@@ -23,7 +23,7 @@ environment{
 
         NEXUS_GRP_REPO = 'vprof-grp'
 
-        NEXUS_LOGIN = 'c022fcbd-7fbc-4e34-82e1-b70d360ebfa1'
+        NEXUS_LOGIN = 'nexuslogin1'
         SONARSERVER ='sonarserver'
         SONARSCANNER='sonarscanner'
        
