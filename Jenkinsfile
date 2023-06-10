@@ -95,7 +95,7 @@ environment{
                 protocol: 'http',
                 nexusUrl: 'http://15.206.163.116:8081/',
                 groupId: 'QA',
-                version: '$(env.BUILD_ID)-$(env.BUILD_TIMESTAMP)',
+                version: '1.0.0',
                 repository: '$(RELEASE_REPO)',
                 credentialsId: 'nexuslogin1',
                 artifacts: [
