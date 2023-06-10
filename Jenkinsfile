@@ -103,7 +103,7 @@ environment{
                     [
                         artifactId: 'vproapp',
                         classifier: '',
-                        file: 'target/vprofile.war',
+                        file: 'target/vprofile-v2.war',
                         type: 'war'
                     ]
                     // Add more artifacts if needed
