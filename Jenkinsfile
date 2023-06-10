@@ -93,10 +93,10 @@ environment{
             nexusArtifactUploader (
                 nexusVersion: 'nexus3',
                 protocol: 'http',
-                nexusUrl: 'http://15.206.163.116:8081/',
+                nexusUrl: 'http://172.31.15.28:8081/',
                 groupId: 'QA',
                 version: '1.0.0',
-                repository: '$(RELEASE_REPO)',
+                repository: 'vprof-release',
                 credentialsId: 'nexuslogin1',
                 artifacts: [
                     // List of artifacts to upload
