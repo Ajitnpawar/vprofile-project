@@ -91,7 +91,6 @@ environment{
         
         stage('Upload to Nexus Repository') {
     steps {
-        nexusPublisher {
             nexusArtifactUploader (
                 nexusVersion: 'nexus3',
                 protocol: 'http',
@@ -111,7 +110,7 @@ environment{
                     // Add more artifacts if needed
                 ]
             )
-        }
+        
     }
 }
 
