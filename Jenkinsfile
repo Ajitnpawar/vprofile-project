@@ -88,5 +88,33 @@ environment{
         }
     }
 }
+        
+        stage('Upload to Nexus Repository') {
+    steps {
+        nexusPublisher {
+            nexusArtifactUploader {
+                nexusVersion: 'nexus3',
+                protocol: 'http',
+                nexusUrl: '$(NEXUSIP):$(NEXUSPORT)',
+                groupId: 'QA',
+                version: "$(env.BUILD_ID)-$(env.BUILD_TIMESTAMP)",
+                repository: '$(RELEASE_REPO)',
+                credentialsId: '$(NEXUS_LOGIN)',
+                artifacts: [
+                    // List of artifacts to upload
+                    [
+                        artifactId: 'vproapp',
+                        classifier: '',
+                        file: 'target/vprofile.war',
+                        type:'war'
+                    ]
+                    // Add more artifacts if needed
+                ]
+            }
+        }
+    }
+}
+
+        
     }
 }
