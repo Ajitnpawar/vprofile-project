@@ -54,6 +54,20 @@ environment{
                 
             }
         }
+        
+         stages {
+    stage('Unpack SonarScanner CLI') {
+      steps {
+        script {
+          dir('/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation') {
+            // Assuming you have the 'unzip' command available in your Jenkins environment
+            sh 'unzip -oq /path/to/sonar-scanner-cli-4.8.0.2856.zip -d sonarscanner'
+          }
+        }
+      }
+    }
+  }
+        
      stage('SonarQube Analysis') {
     environment{
         SONARSERVER ='sonarserver'
@@ -65,7 +79,7 @@ environment{
                 
 
                 // Step: Set up environment variables for SonarQube
-                withSonarQubeEnv"${SONARSERVER}" {
+                withSonarQubeEnv("${SONARSERVER}") {
                     // Step: Run SonarQube scanner
                     sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=vprofile \
                    -Dsonar.projectName=vprofile-repo \
